@@ -1,6 +1,6 @@
 # Image Similarity
 
-### Update: Code updated to work with google colab. Use `Image_Similarity.ipynb` to test code. 
+### UPDATE: Code updated to work with google colab. Use `Image_Similarity.ipynb` to test code. 
 ### TODO: Use faster predefined keras models from, https://keras.io/api/applications/
 
 <br>
