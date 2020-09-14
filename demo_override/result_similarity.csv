@@ -1,0 +1,7 @@
+test1_id	test1_url	test2_id	test2_url	similarity
+1	demo_custom/extracted_frames/frame0.jpg	1	demo_custom/extracted_frames/frame30.jpg	0.94881
+2	demo_custom/extracted_frames/frame5.jpg	1	demo_custom/extracted_frames/frame30.jpg	0.95348
+3	demo_custom/extracted_frames/frame10.jpg	1	demo_custom/extracted_frames/frame30.jpg	0.95480
+4	demo_custom/extracted_frames/frame15.jpg	1	demo_custom/extracted_frames/frame30.jpg	0.96063
+5	demo_custom/extracted_frames/frame20.jpg	1	demo_custom/extracted_frames/frame30.jpg	0.96213
+6	demo_custom/extracted_frames/frame25.jpg	1	demo_custom/extracted_frames/frame30.jpg	0.96675

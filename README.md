@@ -1,5 +1,7 @@
 # Image Similarity
 
+** Update: Code updated to work with google colab. **
+
 This is an efficient utility of image similarity using [MobileNet](https://arxiv.org/abs/1704.04861) deep neural network.
 
 Image similarity is a task mostly about feature selection of the image. Here, the Convolutional Neural Network (CNN) is used to extract features of these images. It is a better way for computer to understand them effectively.

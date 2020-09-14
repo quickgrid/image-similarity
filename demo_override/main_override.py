@@ -26,9 +26,20 @@ if __name__ == "__main__":
     similarity.num_processes = 2
 
     '''Load source data'''
-    test1 = similarity.load_data_csv('./test1.csv', delimiter=',')
-    test2 = similarity.load_data_csv('./test2.csv', delimiter=',', cols=['id', 'path'])
+    #test1 = similarity.load_data_csv('./test1.csv', delimiter=',')
+    #test2 = similarity.load_data_csv('./test2.csv', delimiter=',', cols=['id', 'path'])
+
+    test1 = similarity.load_data_csv('./demo_custom_test1.csv', delimiter=',')
+    test2 = similarity.load_data_csv('./demo_custom_test2.csv', delimiter=',', cols=['id', 'path'])
+
+
 
     '''Save features and fields'''
     similarity.save_data('test1', test1)
     similarity.save_data('test2', test2)
+
+    
+    '''Calculate similarities'''
+    result = similarity.iteration(['test1_id', 'test1_url', 'test2_id', 'test2_url'], thresh=0.845)
+    print('Row for source file 1, and column for source file 2.')
+    print(result)
