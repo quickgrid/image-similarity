@@ -210,7 +210,10 @@ class ImageSimilarity():
         print('%s: feature saved to `%s`.' % (title, fname_feature))
 
         fname_fields = os.path.join(self._tmp_dir, '_' + title + '_fields.csv')
-        np.savetxt(fname_fields, generator.list_of_label_fields, delimiter='\t', fmt='%s', encoding='utf-8')
+        
+        #np.savetxt(fname_fields, generator.list_of_label_fields, delimiter='\t', fmt='%s', encoding='utf-8')
+        np.savetxt(fname_fields, generator.list_of_label_fields, delimiter=',', fmt='%s', encoding='utf-8')
+        
         print('%s: fields saved to `%s`.' % (title, fname_fields))
 
         print('%s: download succeeded.' % title)
@@ -247,8 +250,13 @@ class ImageSimilarity():
         feature1 = self.load_data_h5(os.path.join(self._tmp_dir, '_' + self._title[0] + '_feature.h5'))
         feature2 = self.load_data_h5(os.path.join(self._tmp_dir, '_' + self._title[1] + '_feature.h5'))
 
-        fields1 = self.load_data_csv(os.path.join(self._tmp_dir, '_' + self._title[0] + '_fields.csv'), delimiter='\t', include_header=False)
-        fields2 = self.load_data_csv(os.path.join(self._tmp_dir, '_' + self._title[1] + '_fields.csv'), delimiter='\t', include_header=False)
+        #fields1 = self.load_data_csv(os.path.join(self._tmp_dir, '_' + self._title[0] + '_fields.csv'), delimiter='\t', include_header=False)
+        #fields2 = self.load_data_csv(os.path.join(self._tmp_dir, '_' + self._title[1] + '_fields.csv'), delimiter='\t', include_header=False)
+
+
+        fields1 = self.load_data_csv(os.path.join(self._tmp_dir, '_' + self._title[0] + '_fields.csv'), delimiter=',', include_header=False)
+        fields2 = self.load_data_csv(os.path.join(self._tmp_dir, '_' + self._title[1] + '_fields.csv'), delimiter=',', include_header=False)
+
 
         print('%s: feature loaded, shape' % self._title[0], feature1.shape)
         print('%s: fields loaded, length' % self._title[0], len(fields1))
@@ -270,7 +278,8 @@ class ImageSimilarity():
                 result.append(np.concatenate((fields1[x], fields2[y], np.array(['%.5f' % dis])), axis=0))
 
         if len(result) > 0:
-            np.savetxt('result_similarity.csv', result, fmt='%s', delimiter='\t', encoding='utf-8')
+            #np.savetxt('result_similarity.csv', result, fmt='%s', delimiter='\t', encoding='utf-8')
+            np.savetxt('result_similarity.csv', result, fmt='%s', delimiter=',', encoding='utf-8')
 
         print('Iteration finished: results saved to `result_similarity.csv`.')
         print('Amount: %d (%d * %d)' % (len(fields1)*len(fields2), len(fields1), len(fields2)))
