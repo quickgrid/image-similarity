@@ -1,6 +1,8 @@
 # Image Similarity
 
-**Update: Code updated to work with google colab.**
+### Update: Code updated to work with google colab. Use `Image_Similarity.ipynb` to test code.
+
+<br>
 
 This is an efficient utility of image similarity using [MobileNet](https://arxiv.org/abs/1704.04861) deep neural network.
 
